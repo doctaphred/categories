@@ -217,8 +217,8 @@ class has:
     def __getattr__(self, name):
         return Category(hasattr, name)
 
-    def __call__(self, *names):
-        return Fold(*(Category(hasattr, name) for name in names))
+    def __call__(self, *names, fold=all):
+        return Fold(*(Category(hasattr, name) for name in names), fold=fold)
 
 
 @magic
