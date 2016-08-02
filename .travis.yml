@@ -3,4 +3,4 @@ python:
   - "3.5"
   - "3.5-dev"
   - "nightly"
-script: "python -m doctest *.py"
+script: "python -m doctest -v *.py"
