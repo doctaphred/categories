@@ -5,31 +5,31 @@ Set-theoretic "types" for Python
 
 >>> from categories import *
 
->>> object in anything
+>>> object() in anything
 True
 >>> float('nan') in anything
 True
 
->>> object in (anything | anything)
+>>> object() in (anything | anything)
 True
->>> object in (anything & anything)
+>>> object() in (anything & anything)
 True
->>> object in (anything ^ anything)
+>>> object() in (anything ^ anything)
 False
 
 >>> nothing = ~anything
->>> object in nothing
+>>> object() in nothing
 False
 
->>> object in (anything | nothing)
+>>> object() in (anything | nothing)
 True
->>> object in (anything & nothing)
+>>> object() in (anything & nothing)
 False
->>> object in (anything ^ nothing)
+>>> object() in (anything ^ nothing)
 True
 
 >>> something = ~nothing
->>> object in something
+>>> object() in something
 True
 
 >>> ints = Category(isinstance, int)
