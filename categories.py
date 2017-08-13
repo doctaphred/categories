@@ -108,10 +108,6 @@ import operator
 from itertools import chain
 
 
-def magic(cls):
-    return cls()
-
-
 def not_any(x):
     """
     >>> not_any([])
@@ -211,7 +207,7 @@ class Fold(Category):
 anything = Fold()
 
 
-@magic
+@object.__new__
 class has:
 
     def __getattr__(self, name):
@@ -221,7 +217,7 @@ class has:
         return Fold(*(Category(hasattr, name) for name in names), fold=fold)
 
 
-@magic
+@object.__new__
 class values:
 
     def __eq__(self, obj):
